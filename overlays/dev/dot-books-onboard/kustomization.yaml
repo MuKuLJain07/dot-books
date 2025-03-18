@@ -6,6 +6,10 @@ namePrefix: dev-dot-books-onboard-
 resources:
   - ../../../base/frontend 
 
+images:
+  - name: IMAGE_NAME
+    newName: 533267268220.dkr.ecr.ap-south-1.amazonaws.com/dot-books/dot-books-onboard
+    newTag: IMG_TAG
 
 patches:
   - target:

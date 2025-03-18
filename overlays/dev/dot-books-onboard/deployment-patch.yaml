@@ -16,7 +16,7 @@ spec:
         app: dot-books-onboard                    
     spec:
       containers:
-        - image: 533267268220.dkr.ecr.ap-south-1.amazonaws.com/dot-books/dot-books-onboard:IMG_TAG
+        - image: IMAGE_NAME
           env:
           name: dot-books-onboard
           readinessProbe:
