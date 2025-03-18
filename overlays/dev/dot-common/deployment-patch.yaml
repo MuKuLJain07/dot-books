@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: dot-common                      
-  namespace: dev                 
+  namespace: argocd                 
   name: dot-common                
 spec:
   selector:

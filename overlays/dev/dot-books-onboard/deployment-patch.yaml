@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: dot-books-onboard                      
-  namespace: dev                 
+  namespace: argocd                 
   name: dot-books-onboard                
 spec:
   selector:

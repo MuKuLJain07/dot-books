@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: dev
+  namespace: argocd
   name: dot-books-onboard
 spec:
   selector:
