@@ -14,7 +14,7 @@ images:
 patches:
   - target:
       kind: Deployment
-      name: dev-dot-books-onboard-deployment 
+      name: deployment 
     path: deployment-patch.yaml
 
   - target:
