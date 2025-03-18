@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dot-books-onboard                      
+  namespace: dev                 
+  name: dot-books-onboard                
+spec:
+  selector:
+    matchLabels:
+      app: dot-books-onboard                     
+  replicas: 1                    
+  template:
+    metadata:
+      labels:
+        app: dot-books-onboard                    
+    spec:
+      containers:
+        - image: 533267268220.dkr.ecr.ap-south-1.amazonaws.com/dot-books/dot-books-onboard:IMG_TAG
+          env:
+          name: dot-books-onboard
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 10
+            
+
+
+
+

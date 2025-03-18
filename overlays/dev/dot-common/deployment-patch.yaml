@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dot-common                      
+  namespace: dev                 
+  name: dot-common                
+spec:
+  selector:
+    matchLabels:
+      app: dot-common                     
+  replicas: 1                    
+  template:
+    metadata:
+      labels:
+        app: dot-common                  
+    spec:
+      containers:
+        - image: 533267268220.dkr.ecr.ap-south-1.amazonaws.com/dot-books/dot-common:IMG_TAG             
+          env:
+          name: dot-common                
+
+
+
+
