@@ -4,7 +4,7 @@ metadata:
   labels:
     app: APP_NAME                      # Placeholder
   namespace: NAMESPACE                 # Placeholder
-  name: deployment                # Placeholder
+  name: deployment                     # Placeholder
 spec:
   selector:
     matchLabels:
