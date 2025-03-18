@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: APP_NAME                      # Placeholder
+    app: appName                      # Placeholder
   namespace: argocd                 # Placeholder
   name: deployment               
 spec:
   selector:
     matchLabels:
-      app: APP_NAME                     # Placeholder
-  replicas: REPLICAS                    # Placeholder
+      app: appName                     # Placeholder
+  replicas: 3                    # Placeholder
   template:
     metadata:
       labels:
-        app: APP_NAME                  # Placeholder
+        app: appName                  # Placeholder
     spec:
       containers:
         - image: IMAGE_NAME             # Placeholder
@@ -21,4 +21,4 @@ spec:
           env:
           - name: TZ
             value: "Asia/Kolkata"
-          name: APP_NAME                # Placeholder
+          name: appName                # Placeholder
