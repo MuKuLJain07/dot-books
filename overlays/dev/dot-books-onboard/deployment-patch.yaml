@@ -16,7 +16,6 @@ spec:
         app: dot-books-onboard                    
     spec:
       containers:
-        - image: IMG_NAME
           env:
           name: dot-books-onboard
           readinessProbe:
