@@ -16,7 +16,7 @@ spec:
         app: dot-books-onboard                    
     spec:
       containers:
-          env:
+        - env:
           name: dot-books-onboard
           readinessProbe:
             httpGet:
