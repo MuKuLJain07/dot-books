@@ -19,5 +19,5 @@ patches:
 
   - target:
       kind: Service
-      name: dot-books-onboard 
+      name: service 
     path: service-patch.yaml
