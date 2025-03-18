@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: dot-common
-  namespace: argocd
-  name: dot-common
+    app: APP_NAME                      # Placeholder
+  namespace: NAMESPACE                 # Placeholder
+  name: DEPLOYMENT_NAME                # Placeholder
 spec:
   selector:
     matchLabels:
-      app: dot-common
-  replicas: 1
+      app: APP_NAME                     # Placeholder
+  replicas: REPLICAS                    # Placeholder
   template:
     metadata:
       labels:
-        app: dot-common
+        app: APP_NAME                  # Placeholder
     spec:
       containers:
-        - image: 533267268220.dkr.ecr.ap-south-1.amazonaws.com/dot-books/dot-common:IMG_TAG
+        - image: IMAGE_NAME             # Placeholder
           imagePullPolicy: Always
           env:
           - name: TZ
             value: "Asia/Kolkata"
-          name: dot-common
+          name: APP_NAME                # Placeholder
