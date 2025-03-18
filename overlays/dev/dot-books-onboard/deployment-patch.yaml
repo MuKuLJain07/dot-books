@@ -4,7 +4,7 @@ metadata:
   labels:
     app: dot-books-onboard                      
   namespace: argocd                 
-  name: dot-books-onboard                
+  name: deployment                
 spec:
   selector:
     matchLabels:

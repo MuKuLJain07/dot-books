@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   labels:
     app: APP_NAME                      # Placeholder
-  namespace: NAMESPACE                 # Placeholder
-  name: DEPLOYMENT_NAME                # Placeholder
+  namespace: argocd                 # Placeholder
+  name: deployment                # Placeholder
 spec:
   selector:
     matchLabels:
