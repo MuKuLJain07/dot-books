@@ -1,24 +1,42 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dot-books
+  name: dot-books-dev
   namespace: argocd
 spec:
-  project: default 
-
+  project: default
   source:
     repoURL: https://github.com/MuKuLJain07/dot-books.git
     targetRevision: HEAD
-    path: development
-
-  destination: 
+    path: overlays/dev
+  destination:
     server: https://kubernetes.default.svc
-    namespace: argocd-demo
-
+    namespace: default
   syncPolicy:
-    syncOptions:
-    - CreateNamespace=true
-
     automated:
-      selfHeal: true
       prune: true
+      selfHeal: true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dot-books-prod
+  namespace: argocd
+  annotations:
+    notifications.argoproj.io/subscribe.on-sync-status-change.slack: "#dotpe-non-prod-alerts"
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/MuKuLJain07/dot-books.git
+    targetRevision: HEAD
+    path: overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+T
