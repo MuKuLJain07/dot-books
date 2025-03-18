@@ -3,10 +3,10 @@ kind: Kustomization
 
 resources:
   - dot-books-onboard
-  - dot-common
+  # - dot-common
   - sales-batch-activation
-  - sales-batch-delegate
+  # - sales-batch-delegate
   - sales-batch-email
-  - sales-batch-inventory
-  - sales-batch-notification-event
-  - sales-services
+  # - sales-batch-inventory
+  # - sales-batch-notification-event
+  # - sales-services
