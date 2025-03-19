@@ -18,8 +18,8 @@ spec:
       containers:
         - name: app-name               
           image: nginx:latest            
-          imagePullPolicy: Always
-          env:
-          - name: TZ
-            value: "Asia/Kolkata"
+          # imagePullPolicy: Always
+          # env:
+          # - name: TZ
+          #   value: "Asia/Kolkata"
           name: dot-books-onboard
