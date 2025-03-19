@@ -16,7 +16,6 @@ spec:
         app: dot-books-onboard                    
     spec:
       containers:
-      containers:
         - name: dot-books-onboard  
           image: nginx:latest  
  
