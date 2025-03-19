@@ -21,8 +21,7 @@ spec:
           imagePullPolicy: Always
           env:
           - name: BATCHSERVICE
-            value: "email"
-          # name: sales-batch-email 
+            value: "email" 
           volumeMounts:
             - name: sales-batch-email-node-logs
               mountPath: /var/log/node
@@ -42,6 +41,7 @@ spec:
             timeoutSeconds: 5
             periodSeconds: 3
             failureThreshold: 5
+          name: sales-batch-email
       volumes: 
         - name: sales-batch-email-node-logs
           nfs:
