@@ -16,8 +16,12 @@ spec:
         app: dot-books-onboard                    
     spec:
       containers:
-        - name : dot-books-onboard
-          image: nginx:latest  
+        - name: dot-books-onboard               
+          image: nginx:latest            
+          imagePullPolicy: Always
+          env:
+          - name: TZ
+            value: "Asia/Kolkata"
  
             
 

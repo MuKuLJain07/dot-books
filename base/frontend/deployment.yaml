@@ -16,10 +16,10 @@ spec:
         app: APP_NAME                   # Placeholder
     spec:
       containers:
-        - name: dot-books-onboard                # Placeholder
-          image: IMAGE_NAME             # Placeholder
-          imagePullPolicy: Always
-          env:
-          - name: TZ
-            value: "Asia/Kolkata"
+        # - name: APP_NAME                # Placeholder
+        #   image: IMAGE_NAME             # Placeholder
+        #   imagePullPolicy: Always
+        #   env:
+        #   - name: TZ
+        #     value: "Asia/Kolkata"
                           
