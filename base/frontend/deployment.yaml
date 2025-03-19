@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   labels:
     app: APP_NAME                      # Placeholder
-  namespace: argocd                 # Placeholder
+  namespace: argocd                    # Placeholder
   name: deployment               
 spec:
   selector:
     matchLabels:
       app: APP_NAME                     # Placeholder
-  replicas: 3                    # Placeholder
+  replicas: 3                           # Placeholder
   template:
     metadata:
       labels:
-        app: APP_NAME                  # Placeholder
+        app: APP_NAME                   # Placeholder
     spec:
       containers:
-        - name: APP_NAME                 # Placeholder
+        - name: dot-books-onboard                # Placeholder
           image: IMAGE_NAME             # Placeholder
           imagePullPolicy: Always
           env:
