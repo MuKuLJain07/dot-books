@@ -2,37 +2,29 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: app-name
+    app: sales-batch-email
   namespace: argocd
-  name: app-name
+  name: sales-batch-email
 spec:
   selector:
     matchLabels:
-      app: app-name
-  replicas: 3
+      app: sales-batch-email
+  replicas: 2
   template:
     metadata:
       labels:
-        app: app-name
+        app: sales-batch-email
     spec:
       containers:
         - name: app-name      
-          image: image-name
+          image: 533267268220.dkr.ecr.ap-south-1.amazonaws.com/dot-books/sales-batch:IMG_TAG
           imagePullPolicy: Always
           env:
-          - name: DOT_BOOKS_AWS_REGION
-            value: "ap-south-1"
-          - name: DOT_BOOKS_CONFIG_BUCKET
-            value: "dot-books-config-dev"
-          - name: PLATFORM_VERSION
-            value: "dev"
-          - name: AWS_NODEJS_CONNECTION_REUSE_ENABLED
-            value: "1"
-          - name: PUPPETEER_EXECUTABLE_PATH
-            value: "/usr/bin/google-chrome"
+          - name: BATCHSERVICE
+            value: "email"
           volumeMounts:
-            - name: varlibdockercontainers
-              mountPath: /var/log/containers
+            - name: sales-batch-email-node-logs
+              mountPath: /var/log/node
           readinessProbe:
             httpGet:
               path: /heartbeat
@@ -49,9 +41,12 @@ spec:
             timeoutSeconds: 5
             periodSeconds: 3
             failureThreshold: 5
+          name: sales-batch-email
       volumes: 
-        - name: varlibdockercontainers
-          hostPath:
-            path: /var/log/containers
+        - name: sales-batch-email-node-logs
+          nfs:
+            path: /dot-books/dev/sales-batch-email/node
+            server: fs-070479e27c7cd87d2.efs.ap-south-1.amazonaws.com
+
 
 
