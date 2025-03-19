@@ -16,7 +16,7 @@ spec:
         app: dot-books-onboard                    
     spec:
       containers:
-        - name: APP_NAME               
+        - name: app_name               
           image: nginx:latest            
           imagePullPolicy: Always
           env:

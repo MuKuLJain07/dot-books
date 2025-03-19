@@ -16,7 +16,7 @@ spec:
         app: APP_NAME                   # Placeholder
     spec:
       containers:
-        - name: APP_NAME                # Placeholder
+        - name: app_name               # Placeholder
           image: IMAGE_NAME             # Placeholder
           imagePullPolicy: Always
           env:
