@@ -22,7 +22,7 @@ spec:
           env:
           - name: BATCHSERVICE
             value: "email"
-          name: sales-batch-email 
+          # name: sales-batch-email 
           volumeMounts:
             - name: sales-batch-email-node-logs
               mountPath: /var/log/node
