@@ -4,7 +4,7 @@ metadata:
   labels:
     app: app-name
   namespace: argocd
-  name: app-name
+  name: deployment
 spec:
   selector:
     matchLabels:
