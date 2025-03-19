@@ -4,7 +4,7 @@ metadata:
   labels:
     app: sales-batch-email
   namespace: argocd
-  name: sales-batch-email
+  name: deployment
 spec:
   selector:
     matchLabels:
@@ -16,13 +16,13 @@ spec:
         app: sales-batch-email
     spec:
       containers:
-        - name: app-name
-          name: sales-batch-email      
+        - name: app-name     
           image: nginx:latest
           imagePullPolicy: Always
           env:
           - name: BATCHSERVICE
             value: "email"
+          name: sales-batch-email 
           volumeMounts:
             - name: sales-batch-email-node-logs
               mountPath: /var/log/node
