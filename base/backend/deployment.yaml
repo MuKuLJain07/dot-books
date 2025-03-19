@@ -30,28 +30,28 @@ spec:
             value: "1"
           - name: PUPPETEER_EXECUTABLE_PATH
             value: "/usr/bin/google-chrome"
-          volumeMounts:
-            - name: varlibdockercontainers
-              mountPath: /var/log/containers
-          readinessProbe:
-            httpGet:
-              path: /heartbeat
-              port: 8020
-            initialDelaySeconds: 10
-            timeoutSeconds: 5
-            periodSeconds: 3
-            failureThreshold: 5
-          livenessProbe:
-            httpGet:
-              path: /heartbeat
-              port: 8020
-            initialDelaySeconds: 10
-            timeoutSeconds: 5
-            periodSeconds: 3
-            failureThreshold: 5
-      volumes: 
-        - name: varlibdockercontainers
-          hostPath:
-            path: /var/log/containers
+      #     volumeMounts:
+      #       - name: varlibdockercontainers
+      #         mountPath: /var/log/containers
+      #     readinessProbe:
+      #       httpGet:
+      #         path: /heartbeat
+      #         port: 8020
+      #       initialDelaySeconds: 10
+      #       timeoutSeconds: 5
+      #       periodSeconds: 3
+      #       failureThreshold: 5
+      #     livenessProbe:
+      #       httpGet:
+      #         path: /heartbeat
+      #         port: 8020
+      #       initialDelaySeconds: 10
+      #       timeoutSeconds: 5
+      #       periodSeconds: 3
+      #       failureThreshold: 5
+      # volumes: 
+      #   - name: varlibdockercontainers
+      #     hostPath:
+      #       path: /var/log/containers
 
 
