@@ -16,9 +16,10 @@ spec:
         app: appName                  # Placeholder
     spec:
       containers:
-        - image: IMAGE_NAME             # Placeholder
+        - name: appName                 # Placeholder
+          image: IMAGE_NAME             # Placeholder
           imagePullPolicy: Always
           env:
           - name: TZ
             value: "Asia/Kolkata"
-          name: appName                # Placeholder
+                          
