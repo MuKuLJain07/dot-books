@@ -15,12 +15,6 @@ spec:
       labels:
         app: dot-books-onboard                    
     spec:
-      containers:
-        - image: IMAGE_NAME             # Placeholder
-          imagePullPolicy: Always
-          env:
-          - name: TZ
-            value: "Asia/Kolkata"
           name: dot-books-onboard  
             
 
