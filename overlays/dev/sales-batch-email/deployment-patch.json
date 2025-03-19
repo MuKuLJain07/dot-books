@@ -1,91 +1,51 @@
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   labels:
-#     app: sales-batch-email
-#   namespace: argocd
-#   name: deployment
-# spec:
-#   selector:
-#     matchLabels:
-#       app: sales-batch-email
-#   replicas: 2
-#   template:
-#     metadata:
-#       labels:
-#         app: sales-batch-email
-#     spec:
-#       containers:
-#         - name: app-name     
-#           image: nginx:latest
-#           imagePullPolicy: Always
-#           env:
-#           - name: BATCHSERVICE
-#             value: "email" 
-#           volumeMounts:
-#             - name: sales-batch-email-node-logs
-#               mountPath: /var/log/node
-#           readinessProbe:
-#             httpGet:
-#               path: /heartbeat
-#               port: 8020
-#             initialDelaySeconds: 10
-#             timeoutSeconds: 5
-#             periodSeconds: 3
-#             failureThreshold: 5
-#           livenessProbe:
-#             httpGet:
-#               path: /heartbeat
-#               port: 8020
-#             initialDelaySeconds: 10
-#             timeoutSeconds: 5
-#             periodSeconds: 3
-#             failureThreshold: 5
-#           name: sales-batch-email
-#       volumes: 
-#         - name: sales-batch-email-node-logs
-#           nfs:
-#             path: /dot-books/dev/sales-batch-email/node
-#             server: fs-070479e27c7cd87d2.efs.ap-south-1.amazonaws.com
-
-
-
-
-  - op: replace 
-    path: /metadata/labels/app
-    value: sales-batch-email 
-
-  - op: replace 
-    path: /spec/selector/matchLabels/app
-    value: sales-batch-email
-
-  - op: replace 
-    path: /spec/replicas
-    value: 1
-
-  - op: replace 
-    path: /spec/template/metadata/labels/app
-    value: sales-batch-email
-
-  - op: replace 
-    path: /spec/template/specs/containers/0/name
-    value: sales-batch-email
-
-  - op: replace 
-    path: /spec/template/specs/containers/0/image
-    value: nginx:latest
-
-  - op: add
-    path: /spec/template/spec/containers/0/env/-
-    value:
-      name: BATCHSERVICE
-      value: email
-      
-  - op: add
-    path: /spec/template/spec/volumes/-
-    value:
-      name: sales-batch-email-node-logs
-      nfs:
-        path: /dot-books/dev/sales-batch-email/node
-        server: fs-070479e27c7cd87d2.efs.ap-south-1.
-
+[
+  {
+    "op": "replace",
+    "path": "/metadata/labels/app",
+    "value": "sales-batch-email"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/selector/matchLabels/app",
+    "value": "sales-batch-email"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/replicas",
+    "value": 1
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/metadata/labels/app",
+    "value": "sales-batch-email"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/name",
+    "value": "sales-batch-email"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/image",
+    "value": "nginx:latest"
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/env/-",
+    "value": {
+      "name": "BATCHSERVICE",
+      "value": "email"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/volumes/-",
+    "value": {
+      "name": "sales-batch-email-node-logs",
+      "nfs": {
+        "path": "/dot-books/dev/sales-batch-email/node",
+        "server": "fs-070479e27c7cd87d2.efs.ap-south-1.amazonaws.com"
+      }
+    }
+  }
+]
