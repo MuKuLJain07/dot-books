@@ -16,7 +16,8 @@ spec:
         app: sales-batch-email
     spec:
       containers:
-        - name: app-name      
+        - name: app-name
+          name: sales-batch-email      
           image: nginx:latest
           imagePullPolicy: Always
           env:
@@ -41,7 +42,6 @@ spec:
             timeoutSeconds: 5
             periodSeconds: 3
             failureThreshold: 5
-          name: sales-batch-email
       volumes: 
         - name: sales-batch-email-node-logs
           nfs:
