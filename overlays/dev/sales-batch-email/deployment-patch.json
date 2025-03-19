@@ -1,6 +1,11 @@
 [
   {
     "op": "replace",
+    "path": "/metadata/name",
+    "value": "dev-sales-batch-email-deployment"
+  },
+  {
+    "op": "replace",
     "path": "/metadata/labels/app",
     "value": "sales-batch-email"
   },
