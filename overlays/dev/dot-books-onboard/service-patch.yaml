@@ -2,7 +2,7 @@
   path: "/metadata/name"
   value: dev-dot-books-onboard
 - op: replace
-  path: "/specs/selector/app"
+  path: "/spec/selector/app"
   value: dot-books-onboard
 - op: replace
   path: "/metadata/namespace"

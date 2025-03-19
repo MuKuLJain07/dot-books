@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: INGRESS_NAME
-  namespace: dev
+  namespace: NAMESPACE
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
@@ -21,7 +21,7 @@ metadata:
     alb.ingress.kubernetes.io/group.order: '100'
 spec:
   rules:
-    - host: "books.dev.dotbooks.dotnu.co"
+    - host: HOST_NAME
       http:
         paths:
           - path: /*
@@ -29,6 +29,6 @@ spec:
             #pathType: Exact
             backend:
                 service:
-                   name: "dot-books-onboard"
+                   name: BACKEND_SERVICE_NAME
                    port:
                      number: 9000
