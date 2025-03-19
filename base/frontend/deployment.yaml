@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: app_name                      # Placeholder
+    app: app-name                      # Placeholder
   namespace: argocd                    # Placeholder
   name: deployment               
 spec:
   selector:
     matchLabels:
-      app: app_name                     # Placeholder
+      app: app-name                     # Placeholder
   replicas: 3                           # Placeholder
   template:
     metadata:
       labels:
-        app: app_name                   # Placeholder
+        app: app-name                   # Placeholder
     spec:
       containers:
-        - name: app_name               # Placeholder
-          image: image_name             # Placeholder
+        - name: app-name               # Placeholder
+          image: image-name             # Placeholder
           imagePullPolicy: Always
           env:
           - name: TZ
