@@ -1,25 +1,37 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  labels:
-    app: dot-books-onboard                      
-  namespace: argocd                 
-  name: deployment                
-spec:
-  selector:
-    matchLabels:
-      app: dot-books-onboard                     
-  replicas: 1                    
-  template:
-    metadata:
-      labels:
-        app: dot-books-onboard                    
-    spec:
-      containers:
-        - name: app-name               
-          image: nginx:latest            
-          # imagePullPolicy: Always
-          # env:
-          # - name: TZ
-          #   value: "Asia/Kolkata"
-          name: dot-books-onboard
+- op: replace
+  path: "/metadata/name"
+  value: dev-dot-books-onboard
+
+- op: replace
+  path: "/metadata/labels/app"
+  value: dot-books-onboard
+
+- op: replace
+  path: "/metadata/namespace"
+  value: argocd
+
+- op: replace
+  path: "/spec/selector/matchLabels/app"
+  value: dot-books-onboard
+
+- op: replace
+  path: "/spec/replicas"
+  value: 1
+
+- op: replace
+  path: "/spec/template/metadata/labels/app"
+  value: dot-books-onboard
+
+- op: replace
+  path: "/spec/template/spec/containers/0/name"
+  value: dot-books-onboard
+
+- op: replace
+  path: "/spec/template/spec/containers/0/image"
+  value: nginx:latest
+
+- op: add
+  path: "/spec/template/spec/containers/0/env/-"
+  value:
+    name: BATCHSERVICE
+    value: email

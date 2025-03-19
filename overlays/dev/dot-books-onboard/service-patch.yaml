@@ -1,9 +1,9 @@
-apiVersion: v1
-kind: Service
-metadata:
-  namespace: argocd
-  name: service
-spec:
-  selector:
-    app: dot-books-onboard
-
+- op: replace
+  path: "/metadata/name"
+  value: dev-dot-books-onboard
+- op: replace
+  path: "/specs/selector/app"
+  value: dot-books-onboard
+- op: replace
+  path: "/metadata/namespace"
+  value: argocd

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: argocd
+  namespace: NAMESPACE
   name: service
 spec:
   type: ClusterIP
