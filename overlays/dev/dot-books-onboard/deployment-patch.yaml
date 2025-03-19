@@ -16,7 +16,7 @@ spec:
         app: dot-books-onboard                    
     spec:
       containers:
-        name: dot-books-onboard  
+        - name: dot-books-onboard  
             
 
 
