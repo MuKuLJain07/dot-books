@@ -16,13 +16,12 @@ spec:
         app: dot-books-onboard                    
     spec:
       containers:
-        - env:
-          name: dot-books-onboard
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: 3000
-            initialDelaySeconds: 10
+        - image: IMAGE_NAME             # Placeholder
+          imagePullPolicy: Always
+          env:
+          - name: TZ
+            value: "Asia/Kolkata"
+          name: dot-books-onboard  
             
 
 
