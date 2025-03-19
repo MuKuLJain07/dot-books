@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: app-name      
-          image: 533267268220.dkr.ecr.ap-south-1.amazonaws.com/dot-books/sales-batch:IMG_TAG
+          image: nginx:latest
           imagePullPolicy: Always
           env:
           - name: BATCHSERVICE
