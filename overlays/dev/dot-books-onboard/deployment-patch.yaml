@@ -14,10 +14,10 @@ spec:
     metadata:
       labels:
         app: dot-books-onboard                    
-    spec:
-      containers:
-        - name: dot-books-onboard  
-          image: nginx:latest  
+    # spec:
+    #   containers:
+    #     - name: dot-books-onboard  
+    #       image: nginx:latest  
  
             
 
